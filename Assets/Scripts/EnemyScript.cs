@@ -248,7 +248,7 @@ public class EnemyScript : MonoBehaviour
         if (!isPreparingAttack)
             return;
 
-        if(Vector3.Distance(transform.position, playerCombat.transform.position) < 2)
+        if(Vector3.Distance(transform.position, playerCombat.transform.position) < 1 )
         {
             StopMoving();
             if (!playerCombat.isCountering && !playerCombat.isAttackingEnemy)

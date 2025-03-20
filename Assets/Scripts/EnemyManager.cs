@@ -40,7 +40,7 @@ public class EnemyManager : MonoBehaviour
             yield break;
         }
 
-        yield return new WaitForSeconds(Random.Range(.5f,1.5f));
+        yield return new WaitForSeconds(Random.Range(.5f, 1.5f));
 
         EnemyScript attackingEnemy = RandomEnemyExcludingOne(enemy);
 
@@ -49,8 +49,8 @@ public class EnemyManager : MonoBehaviour
 
         if (attackingEnemy == null)
             yield break;
-            
-        yield return new WaitUntil(()=>attackingEnemy.IsRetreating() == false);
+
+        yield return new WaitUntil(() => attackingEnemy.IsRetreating() == false);
         yield return new WaitUntil(() => attackingEnemy.IsLockedTarget() == false);
         yield return new WaitUntil(() => attackingEnemy.IsStunned() == false);
 
@@ -60,7 +60,7 @@ public class EnemyManager : MonoBehaviour
 
         attackingEnemy.SetRetreat();
 
-        yield return new WaitForSeconds(Random.Range(0,.5f));
+        yield return new WaitForSeconds(Random.Range(0, .5f));
 
         if (AliveEnemyCount() > 0)
             AI_Loop_Coroutine = StartCoroutine(AI_Loop(attackingEnemy));
@@ -142,7 +142,7 @@ public class EnemyManager : MonoBehaviour
         return count;
     }
 
-    public void SetEnemyAvailiability (EnemyScript enemy, bool state)
+    public void SetEnemyAvailiability(EnemyScript enemy, bool state)
     {
         for (int i = 0; i < allEnemies.Length; i++)
         {

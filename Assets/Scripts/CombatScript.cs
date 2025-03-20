@@ -77,7 +77,7 @@ public class CombatScript : MonoBehaviour
             lockedTarget = enemyDetection.CurrentTarget();
 
         //Extra check to see if the locked target was set
-        if(lockedTarget == null)
+        if (lockedTarget == null)
             lockedTarget = enemyManager.RandomEnemy();
 
         //AttackTarget
@@ -262,7 +262,7 @@ public class CombatScript : MonoBehaviour
     void LerpCharacterAcceleration()
     {
         movementInput.acceleration = 0;
-        DOVirtual.Float(0, 1, .6f, ((acceleration)=> movementInput.acceleration = acceleration));
+        DOVirtual.Float(0, 1, .6f, ((acceleration) => movementInput.acceleration = acceleration));
     }
 
     bool isLastHit()
@@ -288,3 +288,4 @@ public class CombatScript : MonoBehaviour
     #endregion
 
 }
+

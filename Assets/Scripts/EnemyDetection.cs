@@ -37,9 +37,9 @@ public class EnemyDetection : MonoBehaviour
 
         RaycastHit info;
 
-        if (Physics.SphereCast(transform.position, 3f, inputDirection, out info, 10,layerMask))
+        if (Physics.SphereCast(transform.position, 3f, inputDirection, out info, 10, layerMask))
         {
-            if(info.collider.transform.GetComponent<EnemyScript>().IsAttackable())
+            if (info.collider.transform.GetComponent<EnemyScript>().IsAttackable())
                 currentTarget = info.collider.transform.GetComponent<EnemyScript>();
         }
     }
@@ -64,7 +64,7 @@ public class EnemyDetection : MonoBehaviour
         Gizmos.color = Color.black;
         Gizmos.DrawRay(transform.position, inputDirection);
         Gizmos.DrawWireSphere(transform.position, 1);
-        if(CurrentTarget() != null)
+        if (CurrentTarget() != null)
             Gizmos.DrawSphere(CurrentTarget().transform.position, .5f);
     }
 }
